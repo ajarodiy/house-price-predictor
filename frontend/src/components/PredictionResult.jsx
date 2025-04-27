@@ -30,10 +30,14 @@ function PredictionResult({ prediction, isLoading, error }) {
           <div className="spinner"></div>
         </div>
         <h2>Linear Regression in Progress</h2>
-        <p>Our machine learning model is analyzing the input features...</p>
+        <p>The machine learning model is analyzing the input features...</p>
+        <p style={{ fontSize: '0.85rem', color: 'gray', marginTop: '10px' }}>
+          If this is your first time clicking, the service may take 15–20 seconds to start. After that, it will respond immediately.
+        </p>
       </div>
     );
   }
+  
 
   if (prediction === null) {
     return (
