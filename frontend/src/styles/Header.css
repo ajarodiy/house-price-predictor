@@ -39,3 +39,13 @@
       font-size: 1.75rem;
     }
   }
+
+  .dataset-link {
+    text-decoration: underline;
+    font-weight: 500;
+  }
+  
+  .dataset-link:hover {
+    color: white;
+    text-decoration: none;
+  }
