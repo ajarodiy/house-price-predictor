@@ -1,7 +1,9 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS 
 from active_model import predict_house_price
 
 app = Flask(__name__)
+CORS(app)
 
 DEFAULT_FEATURES = {
     'area': 1000,
@@ -25,6 +27,7 @@ def home():
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.get_json()
+    print("Received data:", data)
     try:
         features = [
             data.get('area', DEFAULT_FEATURES['area']),
