@@ -1,7 +1,7 @@
 {
     "rewrites": [
       { "source": "/house-price-predictor", "destination": "/" },
-      { "source": "/house-price-predictor/:path*", "destination": "/:path*" }
+      { "source": "/house-price-predictor/:path*", "destination": "/:path*" },
       { "source": "/digit-recognizer/:path*", "destination": "https://digit-recognizer-weld.vercel.app/:path*" }
     ]
   }
