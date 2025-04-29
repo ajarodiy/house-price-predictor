@@ -24,6 +24,10 @@ DEFAULT_FEATURES = {
 def home():
     return "API is running!"
 
+@app.route('/ping')
+def ping():
+    return "OK", 200
+
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.get_json()

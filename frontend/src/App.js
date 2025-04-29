@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import HousePriceForm from './components/HousePriceForm';
 import PredictionResult from './components/PredictionResult';
 import Header from './components/Header';
@@ -8,6 +8,13 @@ function App() {
   const [prediction, setPrediction] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  // 🟡 Wake-up ping on initial load
+  useEffect(() => {
+    fetch('https://house-price-predictor-j1ic.onrender.com/ping')
+      .then(() => console.log("🔋 Backend wake-up ping sent"))
+      .catch(err => console.log("⚠️ Backend might still be sleeping", err));
+  }, []);
 
   const handlePredict = async (formData) => {
     setIsLoading(true);
